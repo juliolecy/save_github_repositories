@@ -15,7 +15,7 @@ const animate = keyframes`
 export const Container = styled.div`
   max-width: 700px;
   padding: 30px;
-  margin: 100px auto;
+  margin: 100px 20px;
   display:flex;
   align-items: center;
   justify-content: center; 
@@ -23,6 +23,7 @@ export const Container = styled.div`
 `;
 
 export const H1 = styled.h1`
+text-align: center;
 text-transform: uppercase;
 color:white;
 position: relative;
@@ -39,7 +40,9 @@ text-shadow: 1px 1px 1px #919191,
 1px 25px 35px rgba(16,16,16,0.2),
 1px 30px 60px rgba(16,16,16,0.4);
 
-
+@media screen and (max-width:388px){
+    font-size: 2.6rem;
+    }
 
 `;
 
@@ -94,6 +97,9 @@ input{
         color: #00A1C9;
     }
 
+    @media screen and (max-width:388px){
+    width:200px
+    }
   }
 
   label{

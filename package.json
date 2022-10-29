@@ -15,7 +15,6 @@
     "react-icons": "^4.6.0",
     "react-parallax-tilt": "^1.7.68",
     "react-router-dom": "^6.4.2",
-    "react-vanilla-tilt": "^1.0.0",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {

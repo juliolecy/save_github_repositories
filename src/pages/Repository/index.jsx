@@ -76,8 +76,8 @@ export default function Repository() {
         <FaArrowLeft size={20} color="#000" />
       </k.BackButton>
       <k.Owner>
-        <img src={repository.owner.avatar_url} alt={repository.owner.login} />
         <h1>{repository.name}</h1>
+        <img src={repository.owner.avatar_url} alt={repository.owner.login} />
         <p>{repository.description}</p>
       </k.Owner>
 
@@ -87,24 +87,25 @@ export default function Repository() {
           disabled={page < 2}
           onClick={() => handlePage('back')}
         >
-          back
+          Back
         </button>
+
+        <k.FilterList active={filterIndex}>
+          {filters.map((filter, i) => (
+            <button
+              type="button"
+              key={filter.label}
+              onClick={() => handleFilter(i)}
+            >
+              {filter.label}
+            </button>
+          ))}
+        </k.FilterList>
+
         <button type="button" onClick={() => handlePage('next')}>
-          next
+          Next
         </button>
       </k.PageActions>
-
-      <k.FilterList active={filterIndex}>
-        {filters.map((filter, i) => (
-          <button
-            type="button"
-            key={filter.label}
-            onClick={() => handleFilter(i)}
-          >
-            {filter.label}
-          </button>
-        ))}
-      </k.FilterList>
 
       <k.IssuesList>
         {issues.map((issue) => (

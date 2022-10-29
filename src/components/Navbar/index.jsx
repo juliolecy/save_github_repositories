@@ -11,11 +11,11 @@ const Navbar = ({ blackHeader }) => {
       <k.LinkHome to="/">Home</k.LinkHome>
 
       <k.SocialMediaContainer>
-        <k.SocialMedia href="#">
+        <k.SocialMedia href="https://github.com/juliolecy" target="_blank">
           <FiLinkedin />
         </k.SocialMedia>
 
-        <k.SocialMedia href="#">
+        <k.SocialMedia href="https://www.linkedin.com/in/jlins" target="_blank">
           <TbBrandGithub />
         </k.SocialMedia>
       </k.SocialMediaContainer>

@@ -23,6 +23,7 @@ export const Container = styled.header`
     position: sticky;
     top: 0;
     transition: 1s;
+    z-index:1;
    
 `;
 
@@ -48,6 +49,10 @@ export const LinkHome = styled(Link)`
     left: 25%;
     width: 50%;
 }
+
+@media screen and(max-width:384px){
+    font-size: 1.5rem;
+}
 `;
 
 export const NavLogo = styled.h1`
@@ -66,6 +71,10 @@ export const NavLogo = styled.h1`
     font-family: 'Lobster', cursive;
     text-decoration: none;
     animation: ${LogoEffect} 6s linear infinite;
+
+    @media screen and(max-width:384px){
+    font-size: 2rem;
+}
 `;
 
 export const SocialMediaContainer = styled.div`
@@ -78,6 +87,12 @@ export const SocialMediaContainer = styled.div`
         color: #FFF;
         font-size: 2.4rem;
     }
+
+    @media screen and(max-width:384px){
+        svg{
+    font-size: 2rem;
+        }
+}
 `;
 
 export const SocialMedia = styled.a`

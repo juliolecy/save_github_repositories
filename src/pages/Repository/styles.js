@@ -29,6 +29,10 @@ export const Container = styled.div`
   padding: 30px;
   margin: 80px auto;
 
+  @media screen and (max-width: 708px){
+    margin: 80px 20px;
+  }
+
 
 `;
 
@@ -36,6 +40,7 @@ export const Owner = styled.header`
   display: flex;
   flex-direction:column;
   align-items: center;
+  margin-bottom:20px;
 
   img{
     width: 150px;
@@ -46,6 +51,7 @@ export const Owner = styled.header`
   h1{
     font-size: 30px;
     color:#0D2636;
+    text-transform:capitalize;
   }
 
   p{
@@ -68,9 +74,9 @@ export const BackButton = styled(Link)`
 `;
 
 export const IssuesList = styled.ul`
-  margin-top: 30px;
-  padding-top: 30px;
-  border-top: 1px solid #eee;
+  margin-top: 10px;
+  padding-top: 10px;
+ 
   list-style:none;
 
   li{
@@ -137,6 +143,7 @@ export const PageActions = styled.div`
   display:flex;
   align-items:center;
   justify-content: space-between;
+  border-top: 1px solid #eee;
 
   button{
     outline:0;
@@ -151,6 +158,11 @@ export const PageActions = styled.div`
       opacity: 0.5;
     }
 
+  }
+
+  @media screen and (max-width: 366px){
+    padding-top: 10px;
+    flex-direction:column;
   }
 
 `;
