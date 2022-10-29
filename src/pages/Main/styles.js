@@ -76,6 +76,7 @@ export const InputContainer = styled.div`
 position:relative;
 
 input{
+    color: rgb(218 255 255);
     flex:1;
     border: 1px solid ${(props) => (props.error ? '#FF0000' : '#eee')};
     padding: 10px 15px;
