@@ -14,7 +14,7 @@ html{
 }
 
 body{
-    background: #0d2636;
+    background-image: linear-gradient(to right top, #000000, #020202, #040304, #050507, #050709, #060b0d, #060e11, #061113, #061518, #06181c, #051b20, #031e25);
     font-size: 1.6rem;
 }
 

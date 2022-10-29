@@ -2,6 +2,9 @@ import React, { useState, useCallback, useEffect } from 'react';
 import * as k from './styles';
 import { FaGithub, FaPlus, FaSpinner, FaBars, FaTrash } from 'react-icons/fa';
 import { api } from '../../services/api';
+import { Link } from 'react-router-dom';
+import { TiPlus } from 'react-icons/ti';
+import { AiOutlineEye } from 'react-icons/ai';
 
 export default function Main() {
   const [newRepo, setNewRepo] = useState('');
@@ -73,42 +76,50 @@ export default function Main() {
   );
 
   return (
-    <k.Container>
-      <h1>
-        <FaGithub />
-        My repositories
-      </h1>
+    <>
+      <k.Container>
+        <k.H1 data-text="Save&nbsp;your&nbsp;repositories">
+          Save your repositories
+        </k.H1>
 
-      <k.Form onSubmit={handleSubmit} loading={loading ? 1 : 0} error={alert}>
-        <input
-          type="text"
-          placeholder="new repository"
-          value={newRepo}
-          onChange={handleInputChange}
-        />
+        <k.Main>
+          <k.Form
+            onSubmit={handleSubmit}
+            loading={loading ? 1 : 0}
+            error={alert}
+          >
+            <k.InputContainer>
+              <input
+                required
+                type="text"
+                value={newRepo}
+                onChange={handleInputChange}
+              />
+              <label htmlFor="name">Name</label>
+            </k.InputContainer>
 
-        <k.SubmitButton loading={loading ? 1 : 0}>
-          {loading ? (
-            <FaSpinner color="#FFF" size={14} />
-          ) : (
-            <FaPlus color="#FFF" size={14} />
-          )}
-        </k.SubmitButton>
-      </k.Form>
+            <k.SubmitButton loading={loading ? 1 : 0}>
+              {loading ? <FaSpinner color="#FFF" /> : <TiPlus color="#FFF" />}
+            </k.SubmitButton>
+          </k.Form>
 
-      <k.List>
-        {repositories.map((repo) => (
-          <li key={repo.name}>
-            <span>{repo.name}</span>
-            <k.DeleteButton onClick={() => handleDelete(repo.name)}>
-              <FaTrash size={14} />
-            </k.DeleteButton>
-            <a href="">
-              <FaBars size={20} />
-            </a>
-          </li>
-        ))}
-      </k.List>
-    </k.Container>
+          <k.RepositoriesContainer>
+            {repositories.map((repo) => (
+              <k.Card key={repo.name}>
+                <span>{repo.name}</span>
+                <k.RepositoryInfo
+                  to={`/repository/${encodeURIComponent(repo.name)}`}
+                >
+                  <AiOutlineEye />
+                </k.RepositoryInfo>
+                <k.DeleteButton onClick={() => handleDelete(repo.name)}>
+                  <FaTrash />
+                </k.DeleteButton>
+              </k.Card>
+            ))}
+          </k.RepositoriesContainer>
+        </k.Main>
+      </k.Container>
+    </>
   );
 }
