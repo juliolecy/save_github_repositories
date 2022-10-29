@@ -13,7 +13,6 @@ const animate = keyframes`
     `;
 
 export const Container = styled.div`
-  max-width: 700px;
   padding: 30px;
   margin: 100px 20px;
   display:flex;
